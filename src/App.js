@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Recipe from './Recipe';
+import About from './About';
+import Test from './Test';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 const App = () => {
 
@@ -22,18 +30,31 @@ const App = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          value={recipeName}
-          onChange={(e) => setRecipeName(e.target.value)}
-          type="text" id="recipeName"
-          name="recipeName"
-        />
-      </form>
-      <button type="submit">Submit</button>
-      <Recipe recipes={recipes} />
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+              <Link to="/about">About</Link>
+            </li>
+          </ul>
+        </nav>
+        <form onSubmit={handleSubmit}>
+          <input
+            value={recipeName}
+            onChange={(e) => setRecipeName(e.target.value)}
+            type="text" id="recipeName"
+            name="recipeName"
+          />
+        </form>
+        <button type="submit">Submit</button>
+        <Test />
+        <Switch>
+          <Recipe recipes={recipes} />
+        </Switch>
+      </div>
+    </Router>
   )
 }
 
