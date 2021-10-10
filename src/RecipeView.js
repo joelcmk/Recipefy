@@ -14,23 +14,17 @@ const Recipe = (props) => {
   const [hello, setHello] = useState(false)
 
 
-  const handleClick = (name, x) => {
-    setTest(name)
-    setHello(x)
+  const handleClick = (name) => {
+    props.test(name)
   }
-
-
-  console.log(hello)
 
   return (
     <div>
-      <Route exact path="/about" component={() => <About name={test} />} />
-      <About name={test} />
       {props.recipes.map(recipe => {
         return (
           <div>
 
-            <p onClick={() => handleClick(recipe.recipe.label, true)}>{recipe.recipe.label}</p>
+            <p onClick={() => handleClick(recipe.recipe.label)}>{recipe.recipe.label}</p>
 
           </div>
         )

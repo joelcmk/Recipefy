@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Recipe from './Recipe';
+import RecipeList from './RecipeList';
 import About from './About';
 import Test from './Test';
 import {
@@ -14,6 +14,7 @@ const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [value, setValue] = useState('chicken');
   const [recipeName, setRecipeName] = useState('chicken')
+  const [selectedRecipe, setSetlectedRecipe] = useState('')
 
   useEffect(() => {
     fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${value}&app_id=087b9bb4&app_key=10f69d2dd672bf98341ee4ec9af82a6d`)
@@ -28,6 +29,8 @@ const App = () => {
     e.preventDefault();
     setValue(recipeName)
   }
+
+  console.log(selectedRecipe)
 
   return (
     <Router>
@@ -49,9 +52,13 @@ const App = () => {
           />
         </form>
         <button type="submit">Submit</button>
-        <Test />
         <Switch>
-          <Recipe recipes={recipes} />
+          <Route path="/about">
+            <About test={selectedRecipe} />
+          </Route>
+          <Route>
+            <RecipeList recipes={recipes} selected={setSetlectedRecipe} />
+          </Route>
         </Switch>
       </div>
     </Router>

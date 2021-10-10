@@ -8,9 +8,12 @@ const About = (props) => {
   useEffect(() => {
 
   }, [props.name])
+
+  console.log(props.test)
   return (
     <div>
-      <p>{props.name}</p>
+      <h1>About {props.test}</h1>
+      <p>Hello</p>
     </div>
   )
 }
