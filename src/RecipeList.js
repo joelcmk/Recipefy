@@ -6,7 +6,7 @@ const RecipeList = (props) => {
   return (
     <div>
       {props.recipes.map(recipe => {
-        return <RecipeCard name={recipe.recipe.label} selected={props.selected} />
+        return <RecipeCard name={recipe.recipe.label} image={recipe.recipe.image} selected={props.selected} />
       })}
     </div>
   )
