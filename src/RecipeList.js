@@ -1,12 +1,18 @@
 import React from 'react';
 import RecipeCard from './RecipeCard';
+import { Link } from 'react-router-dom';
+
 
 const RecipeList = (props) => {
 
   return (
     <div>
       {props.recipes.map(recipe => {
-        return <RecipeCard name={recipe.recipe.label} image={recipe.recipe.image} selected={props.selected} />
+        return (
+          <Link to="/about">
+            <RecipeCard information={recipe.recipe} selected={props.selected} />
+          </Link>
+        )
       })}
     </div>
   )

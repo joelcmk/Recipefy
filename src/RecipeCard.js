@@ -9,11 +9,13 @@ const RecipeCard = (props) => {
     })
   }
 
+  console.log(props.preva)
+
 
   return (
-    <div onClick={() => handleChange(props.name, props.image)}>
-      <h3>{props.name}</h3>
-      <img src={props.image} height="300px" width="300px" />
+    <div onClick={() => handleChange(props.information.label, props.information.image)}>
+      <h3>{props.information.label}</h3>
+      <img src={props.information.image} height="300px" width="300px" />
     </div>
   )
 }

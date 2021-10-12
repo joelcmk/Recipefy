@@ -13,8 +13,9 @@ const App = () => {
 
   const [recipes, setRecipes] = useState([]);
   const [value, setValue] = useState('chicken');
-  const [recipeName, setRecipeName] = useState('chicken')
-  const [selectedRecipe, setSetlectedRecipe] = useState()
+  const [recipeName, setRecipeName] = useState('chicken');
+  const [selectedRecipe, setSetlectedRecipe] = useState({ name: '', image: '', });
+  const [test, setTest] = useState();
 
   useEffect(() => {
     fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${value}&app_id=087b9bb4&app_key=10f69d2dd672bf98341ee4ec9af82a6d`)
@@ -30,7 +31,7 @@ const App = () => {
     setValue(recipeName)
   }
 
-  console.log(recipes)
+  console.log(test)
 
   return (
     <Router>
