@@ -21,7 +21,7 @@ const Test = (props) => {
 
   return (
     <div>
-      <Route exact path="/about" component={() => <About name={test} />} />
+      <Route exact path="/about#test" component={() => <About name={test} />} />
 
       <h1 onClick={handleClick}>{props.name}</h1>
       <img src={props.image} alt="recipe" height="300" width="300" />
