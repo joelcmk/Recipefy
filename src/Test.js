@@ -15,7 +15,7 @@ const Test = (props) => {
     )
   }
 
-  console.log(test);
+
 
 
 

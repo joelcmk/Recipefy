@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 
 const RecipeList = (props) => {
 
-  const [test, setTest] = useState('')
-
 
 
 
@@ -15,9 +13,9 @@ const RecipeList = (props) => {
     <div>
       {props.recipes.map(recipe => {
         return (
-          <Link to={`recipe/${props.url}`}>
-            <RecipeCard information={recipe.recipe} url={props.test} selected={props.selected} />
-          </Link>
+
+          <RecipeCard information={recipe.recipe} test={props.test} url={props.url} selected={props.selected} />
+
         )
       })}
     </div>

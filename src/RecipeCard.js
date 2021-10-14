@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 const RecipeCard = (props) => {
 
@@ -8,7 +10,7 @@ const RecipeCard = (props) => {
       img: img
     })
     const url = link.replace('http://www.edamam.com/ontologies/edamam.owl#', '')
-    props.url(url)
+    props.test(url)
   }
 
 
@@ -17,10 +19,15 @@ const RecipeCard = (props) => {
 
 
   return (
-    <div onClick={() => handleChange(props.information.label, props.information.image, props.information.uri)}>
-      <h3>{props.information.label}</h3>
-      <img src={props.information.image} height="300px" width="300px" />
-    </div>
+    <Link to={`/${props.url}`}
+      onClick={() => handleChange(props.information.label, props.information.image, props.information.uri)}
+    >
+      <div >
+        <h3>{props.information.label}</h3>
+        <img src={props.information.image} height="300px" width="300px" />
+        <button className="open-card_button" variant="link">Open</button>
+      </div>
+    </Link>
   )
 }
 

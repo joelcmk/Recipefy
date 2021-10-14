@@ -31,8 +31,8 @@ const App = () => {
     setValue(recipeName)
   }
 
-  console.log(test)
 
+  console.log(test)
 
 
   return (
@@ -56,9 +56,10 @@ const App = () => {
         </form>
         <button type="submit">Submit</button>
         <Switch>
-          <Route path={`/recipe/${test}`}>
+          <Route path={`/${test}`}>
             <About name={selectedRecipe.name} image={selectedRecipe.img} test={selectedRecipe} />
           </Route>
+
           <Route>
             <RecipeList recipes={recipes} selected={setSetlectedRecipe} test={setTest} url={test} />
           </Route>
