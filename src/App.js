@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import RecipeList from './RecipeList';
 import About from './About';
 import Test from './Test';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 import {
   BrowserRouter as Router,
   Switch,
@@ -47,16 +49,17 @@ const App = () => {
           </ul>
         </nav>
         <form onSubmit={handleSubmit}>
-          <input
+          <TextField id="recipeName" label="Recipe name" variant="outlined"
             value={recipeName}
             onChange={(e) => setRecipeName(e.target.value)}
-            type="text" id="recipeName"
+            type="text"
             name="recipeName"
           />
+          <Button type="submit" variant="contained">Submit</Button>
         </form>
-        <button type="submit">Submit</button>
+
         <Switch>
-          <Route path={`/${test}`}>
+          <Route path={`/about`}>
             <About name={selectedRecipe.name} image={selectedRecipe.img} test={selectedRecipe} />
           </Route>
 
