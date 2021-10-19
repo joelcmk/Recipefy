@@ -1,5 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 
 const RecipeCard = (props) => {
@@ -19,15 +25,21 @@ const RecipeCard = (props) => {
 
 
   return (
-    <Link to={`/${props.url}`}
-      onClick={() => handleChange(props.information.label, props.information.image, props.information.uri)}
-    >
-      <div >
-        <h3>{props.information.label}</h3>
-        <img src={props.information.image} height="300px" width="300px" />
-        <button className="open-card_button" variant="link">Open</button>
-      </div>
-    </Link>
+    <Card sx={{ maxWidth: 345 }} >
+      <CardMedia
+        component="img"
+        image={props.information.image}
+        height="300"
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {props.information.label}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">Open</Button>
+      </CardActions>
+    </Card>
   )
 }
 

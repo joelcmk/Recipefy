@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import RecipeCard from './RecipeCard';
 import { Link } from 'react-router-dom';
+import './App.css'
 
 
 const RecipeList = (props) => {
@@ -10,12 +11,12 @@ const RecipeList = (props) => {
 
 
   return (
-    <div>
+    <div className="test">
       {props.recipes.map(recipe => {
         return (
-
-          <RecipeCard information={recipe.recipe} test={props.test} url={props.url} selected={props.selected} />
-
+          <div >
+            <RecipeCard information={recipe.recipe} test={props.test} url={props.url} selected={props.selected} />
+          </div>
         )
       })}
     </div>
