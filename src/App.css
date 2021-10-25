@@ -2,3 +2,12 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.card {
+  margin-left: 10px;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+}

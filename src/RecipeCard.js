@@ -6,6 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import './App.css'
 
 
 const RecipeCard = (props) => {
@@ -25,7 +26,7 @@ const RecipeCard = (props) => {
 
 
   return (
-    <Card sx={{ maxWidth: 345 }} >
+    <Card className="card" sx={{ width: 345 }} >
       <CardMedia
         component="img"
         image={props.information.image}
