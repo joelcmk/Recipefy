@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import RecipeList from './RecipeList';
+import RecipeList from './components/RecipeList';
 import About from './About';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-
+import Styled from 'styled-components';
 import {
   BrowserRouter as Router,
   Switch,
@@ -53,7 +53,6 @@ const App = () => {
             </Typography>
           </Toolbar>
         </AppBar>
-
         <form onSubmit={handleSubmit}>
           <TextField id="recipeName" label="Recipe name" variant="outlined"
             value={recipeName}
@@ -65,10 +64,7 @@ const App = () => {
         </form>
 
         <Switch>
-          <Route path={`/about`}>
-            <About />
-          </Route>
-
+          <Route exact path="/about" componenet={About} />
           <Route>
             <RecipeList recipes={recipes} selected={setSetlectedRecipe} address={setAddress} url={address} />
           </Route>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Test from './Test';
-import About from './About'
+import Test from '../Test';
+import About from '../About'
 import {
   BrowserRouter as Router,
   Switch,
