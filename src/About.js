@@ -1,19 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 
 
 
-const About = (props) => {
-
-  useEffect(() => {
-
-  }, [props.name])
-
+const About = () => {
 
   return (
     <div>
-      <h1>About {props.name}</h1>
-      <img src={props.image} height="400px" width="400px" />
+
 
     </div>
   )

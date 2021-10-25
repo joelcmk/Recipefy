@@ -11,11 +11,11 @@ const RecipeList = (props) => {
 
 
   return (
-    <div className="test">
+    <div className="recipe_list">
       {props.recipes.map(recipe => {
         return (
           <div >
-            <RecipeCard information={recipe.recipe} test={props.test} url={props.url} selected={props.selected} />
+            <RecipeCard information={recipe.recipe} address={props.address} url={props.url} selected={props.selected} />
           </div>
         )
       })}

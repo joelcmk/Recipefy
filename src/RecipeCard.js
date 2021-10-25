@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -17,13 +16,8 @@ const RecipeCard = (props) => {
       img: img
     })
     const url = link.replace('http://www.edamam.com/ontologies/edamam.owl#', '')
-    props.test(url)
+    props.address(url)
   }
-
-
-
-
-
 
   return (
     <Card className="card" sx={{ width: 345 }} >
