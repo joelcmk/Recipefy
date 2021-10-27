@@ -54,15 +54,16 @@ const App = () => {
             </Typography>
           </Toolbar>
         </AppBar>
-        <div className="form">
+        <div className="search_form">
           <form onSubmit={handleSubmit}>
-            <TextField id="recipeName" label="Recipe name" variant="outlined"
+            <input id="recipeName" label="Recipe name" variant="outlined"
               value={recipeName}
               onChange={(e) => setRecipeName(e.target.value)}
               type="text"
               name="recipeName"
+              className="search_bar"
             />
-            <Button type="submit" variant="contained" className="search_button">Submit</Button>
+            <button type="submit" variant="contained" className="search_button">Submit</button>
           </form>
         </div>
 
