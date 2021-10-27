@@ -9,6 +9,9 @@ const About = () => {
     <div>
       <h2>About Recipify</h2>
 
+      This is a test
+
+
     </div>
   )
 }

@@ -7,6 +7,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Styled from 'styled-components';
+import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
@@ -53,18 +54,21 @@ const App = () => {
             </Typography>
           </Toolbar>
         </AppBar>
-        <form onSubmit={handleSubmit}>
-          <TextField id="recipeName" label="Recipe name" variant="outlined"
-            value={recipeName}
-            onChange={(e) => setRecipeName(e.target.value)}
-            type="text"
-            name="recipeName"
-          />
-          <Button type="submit" variant="contained">Submit</Button>
-        </form>
+        <div className="form">
+          <form onSubmit={handleSubmit}>
+            <TextField id="recipeName" label="Recipe name" variant="outlined"
+              value={recipeName}
+              onChange={(e) => setRecipeName(e.target.value)}
+              type="text"
+              name="recipeName"
+            />
+            <Button type="submit" variant="contained" className="search_button">Submit</Button>
+          </form>
+        </div>
+
 
         <Switch>
-          <Route exact path="/about" componenet={About} />
+          <Route exact path="/about" component={About} />
           <Route>
             <RecipeList recipes={recipes} selected={setSetlectedRecipe} address={setAddress} url={address} />
           </Route>
