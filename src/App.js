@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import RecipeList from './components/RecipeList';
-import About from './About';
+import About from './components/About';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Styled from 'styled-components';
+import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
@@ -53,18 +54,22 @@ const App = () => {
             </Typography>
           </Toolbar>
         </AppBar>
-        <form onSubmit={handleSubmit}>
-          <TextField id="recipeName" label="Recipe name" variant="outlined"
-            value={recipeName}
-            onChange={(e) => setRecipeName(e.target.value)}
-            type="text"
-            name="recipeName"
-          />
-          <Button type="submit" variant="contained">Submit</Button>
-        </form>
+        <div className="search_form">
+          <form onSubmit={handleSubmit}>
+            <input id="recipeName" label="Recipe name" variant="outlined"
+              value={recipeName}
+              onChange={(e) => setRecipeName(e.target.value)}
+              type="text"
+              name="recipeName"
+              className="search_bar"
+            />
+            <button type="submit" variant="contained" className="search_button">Submit</button>
+          </form>
+        </div>
+
 
         <Switch>
-          <Route exact path="/about" componenet={About} />
+          <Route exact path="/about" component={About} />
           <Route>
             <RecipeList recipes={recipes} selected={setSetlectedRecipe} address={setAddress} url={address} />
           </Route>

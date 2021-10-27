@@ -1,9 +1,48 @@
 .recipe_list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .card {
+
+}
+
+.search_form {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.search_bar {
+  padding: 1.5rem 3rem;
+  font-family: inherit;
+  font-size: inherit;
+  border-radius: 5px;
+  background: #e7e7e7;
+  border: none;
+  text-align: center;
+}
+
+.search_button {
+  pointer-events: auto;
+	cursor: pointer;
+	background: #1975D1;
+  border: none;
+  color: white;
+	padding: 1.5rem 3rem;
+	font-family: inherit;
+  font-size: inherit;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.search_button:hover {
+  background: rgb(43, 146, 248);
+}
+
+.MuiButton-root {
   margin-left: 10px;
 }
 
@@ -11,3 +50,4 @@
   text-decoration: none;
   color: white;
 }
+
