@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import RecipeList from './components/RecipeList';
-import About from './About';
+import About from './components/About';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import AppBar from '@mui/material/AppBar';
