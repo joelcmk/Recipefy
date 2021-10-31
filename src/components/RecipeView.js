@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Test from '../Test';
-import About from '../About'
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,27 +8,14 @@ import {
 
 const Recipe = (props) => {
 
-  const [test, setTest] = useState('')
-  const [hello, setHello] = useState(false)
+  console.log(props.selected)
 
-
-  const handleClick = (name) => {
-    props.test(name)
-  }
 
 
   return (
     <div>
-      {props.recipes.map(recipe => {
-        return (
-          <div>
-
-            <p onClick={() => handleClick(recipe.recipe.label)}>{recipe.recipe.label}</p>
-
-          </div>
-        )
-
-      })}
+      Hello world
+esta chingadera
 
     </div>
   )
