@@ -61,49 +61,55 @@ const App = () => {
             </Typography>
           </Toolbar>
         </AppBar>
-        <div className="search_form">
-          <form onSubmit={handleSubmit}>
-            <input id="recipeName" label="Recipe name" variant="outlined"
-              value={recipeName}
-              onChange={(e) => setRecipeName(e.target.value)}
-              type="text"
-              name="recipeName"
-              className="search_bar"
-            />
-            <button type="submit" variant="contained" className="search_button">Submit</button>
-          </form>
-        </div>
-        <div className="recipe_list">
-          {recipes.map(recipe => {
-            let id = recipe.recipe.uri.replace('http://www.edamam.com/ontologies/edamam.owl#recipe_', '');
+        <Switch>
+          <Route exact path="/" render={(props) => {
             return (
-              <div >
-                <Link to={`/recipe/${id}`}  >
-                  <Card className="card" sx={{ width: 345 }} >
-                    <CardMedia
-                      component="img"
-                      image={recipe.recipe.image}
-                      height="300"
+              <div>
+                <div className="search_form">
+                  <form onSubmit={handleSubmit}>
+                    <input id="recipeName" label="Recipe name" variant="outlined"
+                      value={recipeName}
+                      onChange={(e) => setRecipeName(e.target.value)}
+                      type="text"
+                      name="recipeName"
+                      className="search_bar"
                     />
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        {recipe.recipe.label}
-                      </Typography>
-                    </CardContent>
-                    <CardActions>
-                      <Button size="small">Open</Button>
-                    </CardActions>
-                  </Card>
-                </Link >
+                    <button type="submit" variant="contained" className="search_button">Submit</button>
+                  </form>
+                </div>
+                <div className="recipe_list">
+                  {recipes.map(recipe => {
+                    let id = recipe.recipe.uri.replace('http://www.edamam.com/ontologies/edamam.owl#recipe_', '');
+                    return (
+                      <div >
+                        <Link to={`/recipe/${id}`} onClick={(e) => setSelected(recipe.recipe)} >
+                          <Card className="card" sx={{ width: 345 }} >
+                            <CardMedia
+                              component="img"
+                              image={recipe.recipe.image}
+                              height="300"
+                            />
+                            <CardContent>
+                              <h2>{recipe.recipe.label}</h2>
+                            </CardContent>
+                            <CardActions>
+                              <Button size="small">Open</Button>
+                            </CardActions>
+                          </Card>
+                        </Link >
+                      </div>
+                    )
+                  })}
+                </div>
               </div>
             )
-          })}
-        </div>
-
-
-        <Switch>
+          }} />
           <Route exact path="/about" component={About} />
-          <Route exact path="recipe/:id" component={RecipeView} />
+          <Route exact path="/recipe/:id" render={(props) => {
+            return (
+              <RecipeView name={selected} />
+            )
+          }} />
         </Switch>
       </div>
     </Router>

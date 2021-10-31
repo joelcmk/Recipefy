@@ -6,16 +6,14 @@ import {
   Link
 } from "react-router-dom";
 
-const Recipe = (props) => {
+const RecipeView = (props) => {
 
-  console.log(props.selected)
-
-
+  console.log(props.name)
 
   return (
     <div>
-      Hello world
-esta chingadera
+      <h1>{props.name.label}</h1>
+      <img src={props.name.image} />
 
     </div>
   )
@@ -23,4 +21,4 @@ esta chingadera
 
 }
 
-export default Recipe;
+export default RecipeView;
