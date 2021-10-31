@@ -9,7 +9,7 @@ const About = () => {
     <div>
       <h2>About Recipify</h2>
 
-      This is a test
+      <p>Made with &#10084;&#65039; form Austin.</p>
 
 
     </div>

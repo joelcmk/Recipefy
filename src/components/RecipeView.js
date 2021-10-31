@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Test from '../Test';
-import About from '../About'
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,29 +6,14 @@ import {
   Link
 } from "react-router-dom";
 
-const Recipe = (props) => {
+const RecipeView = (props) => {
 
-  const [test, setTest] = useState('')
-  const [hello, setHello] = useState(false)
-
-
-  const handleClick = (name) => {
-    props.test(name)
-  }
-
+  console.log(props.name)
 
   return (
     <div>
-      {props.recipes.map(recipe => {
-        return (
-          <div>
-
-            <p onClick={() => handleClick(recipe.recipe.label)}>{recipe.recipe.label}</p>
-
-          </div>
-        )
-
-      })}
+      <h1>{props.name.label}</h1>
+      <img src={props.name.image} />
 
     </div>
   )
@@ -38,4 +21,4 @@ const Recipe = (props) => {
 
 }
 
-export default Recipe;
+export default RecipeView;
