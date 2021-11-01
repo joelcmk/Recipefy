@@ -91,6 +91,9 @@ const App = () => {
                             />
                             <CardContent>
                               <h2>{recipe.recipe.label}</h2>
+                              <p>{recipe.recipe.cuisineType}</p>
+                              <p>{recipe.recipe.ingredients.length}</p>
+                              <p>{recipe.recipe.source}</p>
                             </CardContent>
                             <CardActions>
                               <Button size="small">Open</Button>
