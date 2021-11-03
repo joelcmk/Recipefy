@@ -1,20 +1,25 @@
-import React, { useState } from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import React from 'react';
+import './RecipeView.css';
 
 const RecipeView = (props) => {
 
-  console.log(props.name)
+  console.log(props.recipe.totalDaily.FAT.label)
 
   return (
-    <div>
-      <h1>{props.name.label}</h1>
-      <img src={props.name.image} />
-
+    <div className="recipe_view">
+      <h1 className="test">{props.recipe.label}</h1>
+      <img src={props.recipe.image} Alt="" />
+      <div className="ingredients">
+        <h2>{props.recipe.ingredients.length} Ingredients</h2>
+        {props.recipe.ingredients.map(ingredient => {
+          return (
+            <li>{ingredient.text}</li>
+          )
+        })}
+      </div>
+      <div>
+        <h2>Nutrition</h2>
+      </div>
     </div>
   )
 

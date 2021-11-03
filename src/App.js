@@ -49,9 +49,9 @@ const App = () => {
       <div>
         <AppBar position="static">
           <Toolbar variant="dense">
-            <Typography variant="h6" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+            <Typography variant="h5" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
               <Link to="/" className="link">
-                Home
+                Recipify
               </Link>
             </Typography>
             <Typography variant="h6" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
@@ -62,6 +62,7 @@ const App = () => {
           </Toolbar>
         </AppBar>
         <Switch>
+
           <Route exact path="/" render={(props) => {
             return (
               <div>
@@ -91,9 +92,9 @@ const App = () => {
                             />
                             <CardContent>
                               <h2>{recipe.recipe.label}</h2>
-                              <p>{recipe.recipe.cuisineType}</p>
-                              <p>{recipe.recipe.ingredients.length}</p>
-                              <p>{recipe.recipe.source}</p>
+                              <p>Type: {recipe.recipe.cuisineType}</p>
+                              <p>Ingredients: {recipe.recipe.ingredients.length}</p>
+                              <p>Source: {recipe.recipe.source}</p>
                             </CardContent>
                             <CardActions>
                               <Button size="small">Open</Button>
@@ -104,18 +105,26 @@ const App = () => {
                     )
                   })}
                 </div>
+
               </div>
             )
           }} />
           <Route exact path="/about" component={About} />
           <Route exact path="/recipe/:id" render={(props) => {
             return (
-              <RecipeView name={selected} />
+              <RecipeView recipe={selected} />
             )
           }} />
         </Switch>
+        <div>
+          <div className="footer_style" />
+          <div className="style">
+            <p>Made with &#10084;&#65039; form Austin.</p>
+            <a className="footer_link" href='https://www.freepik.com/vectors/food'>Food vector created by bimbimkha - www.freepik.com</a>
+          </div>
+        </div>
       </div>
-    </Router>
+    </Router >
   )
 }
 
