@@ -3,7 +3,7 @@ import './RecipeView.css';
 
 const RecipeView = (props) => {
 
-  console.log(props.recipe.totalDaily.FAT.label)
+  console.log(props.recipe.totalDaily.FAT)
 
   return (
     <div className="recipe_view">
@@ -19,6 +19,7 @@ const RecipeView = (props) => {
       </div>
       <div>
         <h2>Nutrition</h2>
+        <li>{props.recipe.totalDaily.FAT.label} {props.recipe.totalDaily.FAT.quantity} {props.recipe.totalDaily.FAT.unit}</li>
       </div>
     </div>
   )
