@@ -28,7 +28,9 @@ const RecipeView = (props) => {
           )
         })}
       </div>
-
+      <div className="recipe_button">
+        <a target="_blank" href={props.recipe.url}>Full Recipe</a>
+      </div>
     </div>
   )
 

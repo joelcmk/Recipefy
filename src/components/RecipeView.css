@@ -6,6 +6,60 @@
   border-radius: 10px;
 }
 
+.recipe_view h1 {
+  margin-top: 50px;
+  padding-top: 30px;
+}
+
 .test{ 
   text-align: center;
 }
+
+.nutrition {
+  display: flex;
+  justify-content: center;
+}
+.nutrition img {
+  
+}
+
+.nutrition div {
+  margin-left: 30px;
+  list-style-type: none;
+}
+
+.nutrition li {
+  list-style-type: none;
+}
+
+li {
+  margin-top: 10px;
+}
+
+.ingredients {
+  margin-left: 30px;
+  margin-top: 30px;
+  padding-bottom: 30px;
+}
+
+.recipe_button {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-bottom: 50px;
+}
+
+.recipe_button a {
+  width: 100px;
+	background: #27AE60;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 5px;
+	cursor: pointer;
+	padding: 20px 15px;
+  margin: 10px 5px;
+  text-decoration: none;
+}
+
+
