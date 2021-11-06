@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import RecipeList from './components/RecipeList';
-import About from './components/About';
+
 import RecipeView from './components/RecipeView';
 import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -11,7 +9,6 @@ import CardMedia from '@mui/material/CardMedia';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import './App.css';
 
 import {
   BrowserRouter as Router,
@@ -20,12 +17,14 @@ import {
   Link
 } from "react-router-dom";
 
+import './App.css';
+
+
 const App = () => {
 
   const [recipes, setRecipes] = useState([]);
   const [value, setValue] = useState('chicken');
   const [recipeName, setRecipeName] = useState('chicken');
-  const [cardData, setCardData] = useState('');
   const [selected, setSelected] = useState('');
 
   useEffect(() => {
@@ -54,11 +53,6 @@ const App = () => {
                 Recipify
               </Link>
             </Typography>
-            <Typography variant="h6" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-              <Link to="/about" className="link">
-                About
-              </Link>
-            </Typography>
           </Toolbar>
         </AppBar>
         <Switch>
@@ -83,7 +77,7 @@ const App = () => {
                     let id = recipe.recipe.uri.replace('http://www.edamam.com/ontologies/edamam.owl#recipe_', '');
                     return (
                       <div >
-                        <Link to={`/recipe/${id}`} onClick={(e) => setSelected(recipe.recipe)} >
+                        <Link className="card_content" to={`/recipe/${id}`} onClick={(e) => setSelected(recipe.recipe)} >
                           <Card className="card" sx={{ width: 345 }} >
                             <CardMedia
                               component="img"
@@ -109,7 +103,6 @@ const App = () => {
               </div>
             )
           }} />
-          <Route exact path="/about" component={About} />
           <Route exact path="/recipe/:id" render={(props) => {
             return (
               <RecipeView recipe={selected} />
@@ -124,7 +117,7 @@ const App = () => {
           </div>
         </div>
       </div>
-    </Router >
+    </Router>
   )
 }
 

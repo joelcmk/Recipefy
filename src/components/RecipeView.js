@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './RecipeView.css';
 
 const RecipeView = (props) => {
@@ -7,7 +8,7 @@ const RecipeView = (props) => {
 
   return (
     <div className="recipe_view">
-      <h1 className="test">{props.recipe.label}</h1>
+      <h1 className="title">{props.recipe.label}</h1>
       <div className="nutrition">
         <img src={props.recipe.image} Alt="" />
         <div>

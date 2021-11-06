@@ -11,13 +11,14 @@
   padding-top: 30px;
 }
 
-.test{ 
+.title{ 
   text-align: center;
 }
 
 .nutrition {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .nutrition img {
   
