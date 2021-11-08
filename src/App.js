@@ -47,7 +47,7 @@ const App = () => {
           <Toolbar variant="dense">
             <Typography variant="h5" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
               <Link to="/recipes" className="link">
-                Recipify
+                Recipefy
               </Link>
             </Typography>
           </Toolbar>
