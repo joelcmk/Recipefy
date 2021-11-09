@@ -46,7 +46,7 @@ const App = () => {
         <AppBar position="static">
           <Toolbar variant="dense">
             <Typography variant="h5" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-              <Link to="/recipes" className="link">
+              <Link to="/Recipefy" className="link">
                 Recipefy
               </Link>
             </Typography>
@@ -55,7 +55,7 @@ const App = () => {
         <Switch>
           <Route
             exact
-            path="/recipes"
+            path="/Recipefy"
             render={() => (
               <div>
                 <div className="search_form">
@@ -78,7 +78,7 @@ const App = () => {
                     const id = recipe.recipe.uri.replace('http://www.edamam.com/ontologies/edamam.owl#recipe_', '');
                     return (
                       <div>
-                        <Link className="card_content" to={`/recipes/${id}`} onClick={() => setSelected(recipe.recipe)}>
+                        <Link className="card_content" to={`/Recipefy/${id}`} onClick={() => setSelected(recipe.recipe)}>
                           <Card className="card" sx={{ width: 345 }}>
                             <CardMedia
                               component="img"
@@ -115,7 +115,7 @@ const App = () => {
           />
           <Route
             exact
-            path="/recipes/:id"
+            path="/Recipefy/:id"
             render={() => (
               <RecipeView recipe={selected} />
             )}
